@@ -8,4 +8,15 @@ homelessness_state = homelessness.sort_values('state')
 homelessness_ind = homelessness.sort_values('individuals')
 homelessness_fm = homelessness.sort_values('family_members', ascending=False)
 
-print(homelessness_fm.head(10))
+#SUBSETTING
+regions = homelessness['region']
+state = homelessness['state']
+individuals = homelessness['individuals']
+family_members = homelessness['family_members']
+state_populations = homelessness['state_pop']
+
+regions_and_state = homelessness[['region', 'state']]
+individuals_gt_10k = homelessness[homelessness['individuals'] > 10000]
+individuals_gt_10k['new_index'] = range(1, len(individuals_gt_10k) + 1) 
+
+print(individuals_gt_10k)
