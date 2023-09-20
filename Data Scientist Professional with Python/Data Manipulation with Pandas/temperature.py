@@ -68,17 +68,9 @@ temperatures_srt = temperatures_ind_2.sort_index()
 #   print(temperatures_srt.loc[('India', 'Hyderabad'):('Iraq','Baghdad'), 'date': 'avg_temp_c'])
 
 # Use .loc[] to subset temperatures_ind for rows in 2010 and 2011
-print(temperatures_ind.loc['2010':'2011'])
+#print(temperatures_ind.loc['2010':'2011'])
 
 # Use .loc[] to subset temperatures_ind for rows from Aug 2010 to Feb 2011
-print(temperatures_ind.loc['2010-08':'2011-02'])
+#print(temperatures_ind.loc['2010-08':'2011-02'])
 
 
-# Add a year column to temperatures
-temperatures['year'] = temperatures['date'].dt.year
-
-# Pivot avg_temp_c by country and city vs year
-temp_by_country_city_vs_year = temperatures.pivot_table(values='avg_temp_c', index=['country', 'city'], columns = 'year')
-
-# See the result
-print(temp_by_country_city_vs_year)
