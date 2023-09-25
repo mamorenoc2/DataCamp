@@ -17,6 +17,8 @@ state_populations = homelessness['state_pop']
 
 regions_and_state = homelessness[['region', 'state']]
 individuals_gt_10k = homelessness[homelessness['individuals'] > 10000]
+
+#NEW COLUMNS
 individuals_gt_10k['new_index'] = range(1, len(individuals_gt_10k) + 1) 
 
 
