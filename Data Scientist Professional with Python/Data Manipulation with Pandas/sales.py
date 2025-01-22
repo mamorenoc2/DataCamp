@@ -6,10 +6,20 @@ import numpy as np
 sales = pd.read_csv('Datasets/sales_subset.csv')
 
 # Print the head of the sales DataFrame
-#print(sales.head())
+# print('DATAFRAME HEAD \n', sales.head())
 
-# Print the info about the sales DataFrame
-#print(sales.info())
+# .info() shows information on each of the columns, such as the data type and number of missing values.v
+# print('DATAFRAME INFO \n', sales.info())
+
+# .shape returns the number of rows and columns of the Dataframe
+# print('DATAFRAME SHAPE', sales.shape)
+
+# .describe() calculates a few summary statistics for each column.
+# print('DATAFRAME SUMMARY \n', sales.describe())
+
+# print(sales.values)
+# print(sales.columns)
+print(sales.index)
 
 # Print the mean of weekly_sales
 #print(sales['weekly_sales'].mean())
@@ -151,4 +161,4 @@ mean_sales_by_type_holiday = sales.pivot_table(values='weekly_sales', index='typ
 #print(sales.pivot_table(values='weekly_sales', index='type', columns='department', fill_value=0))
 
 # Print the mean weekly_sales by department and type; fill missing values with 0s; sum all rows and cols
-print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
+#print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value=0, margins=True))
